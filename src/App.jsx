@@ -1,11 +1,14 @@
 import React from 'react'
+import './App.css'
+import MovieProvider from './Context/MovieContext'
+import RouterComponent from './components/RouterComponent/RouterComponent'
 
 const App = () => {
-  return (
-    <div>
-        Movie Rating App
-    </div>
-  )
+    return (
+        <MovieProvider>
+            <RouterComponent />
+        </MovieProvider>
+    )
 }
 
 export default App
