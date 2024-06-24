@@ -169,9 +169,11 @@ export default function NavbarComponent(props) {
             let url 
 
             if(filter != 'all') {
-                url = `http://localhost:3500/api/v1/movie?${filter}=${inputSearch}`
+                // url = `http://localhost:3500/api/v1/movie?${filter}=${inputSearch}`
+                url = `https://movie-rating-server.vercel.app/api/v1/movie?${filter}=${inputSearch}`
             } else {
-                url = `http://localhost:3500/api/v1/movie/${inputSearch}`
+                // url = `http://localhost:3500/api/v1/movie/${inputSearch}`
+                url = `https://movie-rating-server.vercel.app/api/v1/movie/${inputSearch}`
             }
             
             axios

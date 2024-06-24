@@ -3,7 +3,6 @@ import { experimentalStyled as styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MovieCardComponent from '../MovieCardComponent/MovieCardComponent';
 import { Typography } from '@mui/material';
-import axios from 'axios';
 import { MovieState } from '../../Context/MovieContext';
 
 const Item = styled('div')(({ theme }) => ({
