@@ -162,7 +162,8 @@ export default function NavbarComponent(props) {
     }
 
     const handleSearchSubmit = (event) => {
-        if(filter != '') {
+        event.preventDefault()
+        if(filter && inputSearch.trim() !== '') {
             event.preventDefault()
             setFilteredMovies([])
             setLastSearch(inputSearch)

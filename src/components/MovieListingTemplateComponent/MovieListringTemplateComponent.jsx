@@ -24,31 +24,31 @@ const Item = styled('div')(({ theme }) => ({
 
 import CircularProgress from '@mui/material/CircularProgress';
 
-const MovieListComponent = () => {
-    const [randomMovies, setRandomMovies] = React.useState([]);
+const MovieListingTemplateComponent = ({ url, heading }) => {
+    const [movies, setMovies] = React.useState([]);
     const [loading, setLoading] = React.useState(true);
 
     React.useEffect(() => {
         axios
-            // .get(`http://localhost:3500/api/v1/movie/random`)
-            .get(`https://movie-rating-server.vercel.app/api/v1/movie/random`)
+            // .get(`http://localhost:3500/api/v1/movie/${url}`)
+            .get(`https://movie-rating-server.vercel.app/api/v1/movie/${url}`)
             .then((response) => {
                 if (response.status === 200) {
-                    setRandomMovies(response.data.data);
+                    setMovies(response.data.data);
                 }
             })
             .catch((error) => {
-                alert(`Status: ${error.response.data.message}`);
+                alert(`Status: ${error.message}`);
             })
             .finally(() => {
                 setLoading(false);
             });
-    }, []);
+    }, [url]);
 
     return (
         <Box sx={{ flexGrow: 1 }}>
             <Box sx={{ paddingLeft: '43px', paddingTop: '2em' }}>
-                <Typography variant="h5">Random Movies</Typography>
+                <Typography variant="h5">{heading}</Typography>
             </Box>
             <div
                 style={{
@@ -62,7 +62,7 @@ const MovieListComponent = () => {
                 {loading ? (
                     <CircularProgress />
                 ) : (
-                    randomMovies.map((movie, index) => (
+                    movies.map((movie, index) => (
                         <Item key={index}>
                             <MovieCardComponent movie={movie} index={index} />
                         </Item>
@@ -75,4 +75,4 @@ const MovieListComponent = () => {
 
 
 
-export default MovieListComponent
+export default MovieListingTemplateComponent

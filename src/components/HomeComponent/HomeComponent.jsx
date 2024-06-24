@@ -3,6 +3,7 @@ import MovieListComponent from '../MovieListComponent/MovieListComponent'
 import { MovieState } from '../../Context/MovieContext'
 import SearchResultComponent from '../SearchResultComponent/SearchResultComponent'
 import { Box, Typography } from '@mui/material'
+import MovieListingTemplateComponent from '../MovieListingTemplateComponent/MovieListringTemplateComponent'
 
 const HomeComponent = () => {
 
@@ -25,7 +26,8 @@ const HomeComponent = () => {
         }
 
         <MovieListComponent />
-        <MovieListComponent />
+        <MovieListingTemplateComponent url="latest" heading="Latest" />
+        <MovieListingTemplateComponent url="top-rating" heading="Top Rated" />
     </div>
   )
 }
