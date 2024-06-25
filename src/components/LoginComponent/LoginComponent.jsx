@@ -44,7 +44,6 @@ const Login = () => {
                     }
                 )
                 .then((response) => {
-                    console.log(response.data)
                     if(response.status === 200) {
                         alert(`${response.data.message} !`)
                         window.location.href = '/'

@@ -33,9 +33,7 @@ const MovieListComponent = () => {
             // .get(`http://localhost:3500/api/v1/movie/random`)
             .get(`https://movie-rating-server.vercel.app/api/v1/movie/random`)
             .then((response) => {
-                console.log(response.data)
                 if (response.status === 200) {
-                    // console.log(response.data)
                     setRandomMovies(response.data.data);
                 }
             })

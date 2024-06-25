@@ -162,7 +162,6 @@ const EditMovieComponent = () => {
                 });
 
         } else {
-            console.log('Form errors', errors);
             setFormErrors(errors);
         }
     };

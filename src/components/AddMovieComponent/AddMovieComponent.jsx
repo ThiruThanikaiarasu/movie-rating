@@ -32,7 +32,6 @@ const AddMovieComponent = () => {
                 }
             )
             .then((response) => {
-                console.log(response.data)
                 if (response.status === 201) {
                     location.href = '/admin'
                 }
@@ -136,7 +135,6 @@ const AddMovieComponent = () => {
         formValues.cast.forEach((castMember) => formData.append('cast', castMember))
     
         // Example: Submitting form data using fetch API
-        console.log(formValues)
 
         axios
             .post(
@@ -150,7 +148,6 @@ const AddMovieComponent = () => {
                 }
             )
             .then((response) => {
-                console.log(response.data)
                 if (response.status === 201) {
                     alert(response.data.message)
                     setImagePreview('')
@@ -178,7 +175,6 @@ const AddMovieComponent = () => {
             });
         
         } else {
-        console.log('Form errors', errors)
         setFormErrors(errors)
         }
     }

@@ -38,9 +38,7 @@ const ShowAllMoviesComponent = () => {
                 }
             )
             .then((response) => {
-                console.log(response.data)
                 if (response.status === 200) {
-                    console.log("verified")
                     fetchAllData()
                 }
             })
