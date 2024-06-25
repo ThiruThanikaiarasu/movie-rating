@@ -48,7 +48,7 @@ const SearchResultComponent = ({movies, heading}) => {
                 {movies ? (
                     movies.map((movie, index) => (
                         <Item key={index}>
-                            <MovieCardComponent movie={movie} index={index} />
+                            <MovieCardComponent movie={movie} index={index} idEdit="false"/>
                         </Item>
                     ))
                 ) : (

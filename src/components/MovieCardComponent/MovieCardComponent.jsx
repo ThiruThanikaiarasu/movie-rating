@@ -14,6 +14,8 @@ import StarBorderIcon from '@mui/icons-material/StarBorder';
 import Button from '@mui/material/Button';
 import { Box, Collapse } from '@mui/material';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
+import EditIcon from '@mui/icons-material/Edit';
+import { useNavigate } from 'react-router-dom';
 
 // import logo from "../../assets/logo.png"
 
@@ -24,33 +26,45 @@ const SaveIconWrapper = styled('div')({
   zIndex: 1,
 });
 
-const MovieCardComponent = ({index, movie}) => {
+const MovieCardComponent = ({index, movie, isEdit}) => {
   const [expanded, setExpanded] = React.useState(false);
+  const navigate = useNavigate()
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
+  const handleEditButtonClick = (movie) => {
+    navigate('/admin/edit',{ state: {movie: movie}})
+  }
+
   return (
     <Card sx={{ position: 'relative' , maxWidth: '165px', backgroundColor: '#1a1a1a', border: 'none', boxShadow: 'none' }}>
-  <SaveIconWrapper
-    sx={{
-      backgroundColor: '#00000080',
-      height: '3em',
-      margin: '0px',
-      position: 'absolute',
-      borderRadius: '5px',
-      zIndex: '1000',
-      '&:hover': {
-        backgroundColor: '#00000050',
-        height: '3.5em'
-      }
-    }}
-  >
-    <IconButton aria-label="add to watchlist">
-      <BookmarkIcon sx={{color: 'white'}}/>
-    </IconButton>
-  </SaveIconWrapper>
+        <SaveIconWrapper
+            sx={{
+                backgroundColor: '#00000080',
+                height: '3em',
+                margin: '0px',
+                position: 'absolute',
+                borderRadius: '5px',
+                zIndex: '1000',
+                '&:hover': {
+                backgroundColor: '#00000050',
+                height: '3.5em'
+                }
+            }}
+            >
+            {isEdit === "true" ? (
+                <IconButton aria-label="edit" onClick={() => handleEditButtonClick(movie)}>
+                    <EditIcon sx={{ color: 'white' }} />
+                </IconButton>
+            ) : (
+                <IconButton aria-label="add to watchlist">
+                    <BookmarkIcon sx={{ color: 'white' }} />
+                </IconButton>
+            )}
+        </SaveIconWrapper>
+
   <CardMedia
     component="img"
     width="165px"    // Adjusted width

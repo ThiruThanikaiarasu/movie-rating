@@ -4,6 +4,8 @@ import NavbarComponent from '../NavbarComponent/NavbarComponent'
 import HomeComponent from '../HomeComponent/HomeComponent'
 import AddMovieComponent from '../AddMovieComponent/AddMovieComponent'
 import LoginComponent from '../LoginComponent/LoginComponent'
+import ShowAllMoviesComponent from '../ShowAllMoviesComponent/ShowAllMovieComponent'
+import EditMovieComponent from '../EditMovieComponent/EditMovieComponent'
 
 const RouterComponent = () => {
   return (
@@ -11,8 +13,10 @@ const RouterComponent = () => {
         <NavbarComponent />
         <Routes>
             <Route path='/' element={<HomeComponent />} />
-            <Route path='/admin/add' element={<AddMovieComponent />} />
+            <Route path='/admin' element={<ShowAllMoviesComponent />} />
             <Route path='/admin/login' element={<LoginComponent />} />
+            <Route path='/admin/add' element={<AddMovieComponent />} />
+            <Route path='/admin/edit' element={<EditMovieComponent />} />
         </Routes>
     </Router>
   )

@@ -24,26 +24,26 @@ const AddMovieComponent = () => {
 
     useEffect(() => {
         axios
-        .get(
-            // `http://localhost:3500/api/v1/admin/authenticate`, 
-            `https://movie-rating-server.vercel.app/api/v1/admin/authenticate`, 
-            {
-                withCredentials: 'true'
-            }
-        )
-        .then((response) => {
-            console.log(response.data)
-            if (response.status === 201) {
-
-            }
-        })
-        .catch((error) => {
-            if(error.response.status == 401) {
-                alert(error.response.data.message)
-            } else {
-            alert(`Status : ${error.message}`);
-            }
-        });
+            .get(
+                `http://localhost:3500/api/v1/admin/authenticate`, 
+                // `https://movie-rating-server.vercel.app/api/v1/admin/authenticate`, 
+                {
+                    withCredentials: 'true'
+                }
+            )
+            .then((response) => {
+                console.log(response.data)
+                if (response.status === 201) {
+                    location.href = '/admin'
+                }
+            })
+            .catch((error) => {
+                if(error.response.status == 401) {
+                    location.href = '/admin/login'
+                } else {
+                alert(`Status : ${error.message}`);
+                }
+            });
     
     }, [])
     const [formValues, setFormValues] = useState({
@@ -140,8 +140,8 @@ const AddMovieComponent = () => {
 
         axios
             .post(
-                // `http://localhost:3500/api/v1/movie/add`, 
-                `https://movie-rating-server.vercel.app/api/v1/movie/add`, 
+                `http://localhost:3500/api/v1/movie/add`, 
+                // `https://movie-rating-server.vercel.app/api/v1/movie/add`, 
                 formData,
                 {
                     headers: {
