@@ -63,7 +63,7 @@ const ShowAllMoviesComponent = () => {
                 }
             })
             .catch((error) => {
-                alert(`Status: ${error.response.data.message}`);
+                alert(`Status: ${error.message}`);
             })
             .finally(() => {
                 setLoading(false);

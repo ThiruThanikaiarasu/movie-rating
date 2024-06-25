@@ -634,8 +634,8 @@ export default function NavbarComponent(props) {
         console.log(query)
         axios
             .get(
-                `http://localhost:3500/api/v1/movie/suggestion/${filter}/${query}`, 
-                // `https://movie-rating-server.vercel.app/api/v1/movie/suggestion/${filter}/${query}`, 
+                // `http://localhost:3500/api/v1/movie/suggestion/${filter}/${query}`, 
+                `https://movie-rating-server.vercel.app/api/v1/movie/suggestion/${filter}/${query}`, 
             )
             .then((response) => {
                 // console.log(response.data)
@@ -645,7 +645,8 @@ export default function NavbarComponent(props) {
                 }
             })
             .catch((error) => {
-                alert(error.message)
+                // alert(error.message)
+                console.log(error.message)
             });
 
         // setSuggestions(filteredSuggestions);
