@@ -183,8 +183,8 @@ export default function NavbarComponent(props) {
         console.log("called")
         axios
             .get(
-                `http://localhost:3500/api/v1/movie/suggestion/${query}`, 
-                // `https://movie-rating-server.vercel.app/api/v1/movie/suggestion/${query}`, 
+                // `http://localhost:3500/api/v1/movie/suggestion/${query}`, 
+                `https://movie-rating-server.vercel.app/api/v1/movie/suggestion/${query}`, 
             )
             .then((response) => {
                 // console.log(response.data)
@@ -219,9 +219,11 @@ export default function NavbarComponent(props) {
             // Perform search based on selected suggestion
             let url;
             if (filter !== 'all') {
-                url = `http://localhost:3500/api/v1/movie?${filter}=${selectedSuggestion}`;
+                // url = `http://localhost:3500/api/v1/movie?${filter}=${selectedSuggestion}`
+                url = `https://movie-rating-server.vercel.app/api/v1/movie?${filter}=${selectedSuggestion}`
             } else {
-                url = `http://localhost:3500/api/v1/movie/${selectedSuggestion}`;
+                // url = `http://localhost:3500/api/v1/movie/${selectedSuggestion}`
+                url = `https://movie-rating-server.vercel.app/api/v1/movie/${selectedSuggestion}`
             }
 
             axios

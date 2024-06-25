@@ -30,8 +30,8 @@ const MovieListingTemplateComponent = ({ url, heading }) => {
 
     React.useEffect(() => {
         axios
-            .get(`http://localhost:3500/api/v1/movie/${url}`)
-            // .get(`https://movie-rating-server.vercel.app/api/v1/movie/${url}`)
+            // .get(`http://localhost:3500/api/v1/movie/${url}`)
+            .get(`https://movie-rating-server.vercel.app/api/v1/movie/${url}`)
             .then((response) => {
                 if (response.status === 200) {
                     setMovies(response.data.data);

@@ -25,8 +25,8 @@ const AddMovieComponent = () => {
     useEffect(() => {
         axios
             .get(
-                `http://localhost:3500/api/v1/admin/authenticate`, 
-                // `https://movie-rating-server.vercel.app/api/v1/admin/authenticate`, 
+                // `http://localhost:3500/api/v1/admin/authenticate`, 
+                `https://movie-rating-server.vercel.app/api/v1/admin/authenticate`, 
                 {
                     withCredentials: 'true'
                 }
@@ -140,8 +140,8 @@ const AddMovieComponent = () => {
 
         axios
             .post(
-                `http://localhost:3500/api/v1/movie/add`, 
-                // `https://movie-rating-server.vercel.app/api/v1/movie/add`, 
+                // `http://localhost:3500/api/v1/movie/add`, 
+                `https://movie-rating-server.vercel.app/api/v1/movie/add`, 
                 formData,
                 {
                     headers: {

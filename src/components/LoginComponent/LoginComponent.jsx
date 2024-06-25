@@ -34,8 +34,8 @@ const Login = () => {
             
             axios
                 .post(
-                    `http://localhost:3500/api/v1/admin/login`, 
-                    // `https://movie-rating-server.vercel.app/api/v1/admin/login`, 
+                    // `http://localhost:3500/api/v1/admin/login`, 
+                    `https://movie-rating-server.vercel.app/api/v1/admin/login`, 
                     {
                         email, password
                     },

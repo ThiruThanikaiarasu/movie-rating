@@ -31,8 +31,8 @@ const ShowAllMoviesComponent = () => {
     React.useEffect(() => {
         axios
             .get(
-                `http://localhost:3500/api/v1/admin/authenticate`, 
-                // `https://movie-rating-server.vercel.app/api/v1/admin/authenticate`, 
+                // `http://localhost:3500/api/v1/admin/authenticate`, 
+                `https://movie-rating-server.vercel.app/api/v1/admin/authenticate`, 
                 {
                     withCredentials: 'true'
                 }
@@ -55,8 +55,8 @@ const ShowAllMoviesComponent = () => {
 
     const fetchAllData = () => {
         axios
-            .get(`http://localhost:3500/api/v1/movie/all`)
-            // .get(`https://movie-rating-server.vercel.app/api/v1/movie/all`)
+            // .get(`http://localhost:3500/api/v1/movie/all`)
+            .get(`https://movie-rating-server.vercel.app/api/v1/movie/all`)
             .then((response) => {
                 if (response.status === 200) {
                     setRandomMovies(response.data.data);

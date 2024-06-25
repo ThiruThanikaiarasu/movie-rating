@@ -123,7 +123,8 @@ const EditMovieComponent = () => {
 
             axios
                 .post(
-                    `http://localhost:3500/api/v1/movie/edit`, // Adjust the endpoint to your API
+                    // `http://localhost:3500/api/v1/movie/edit`, 
+                    `https://movie-rating-server.vercel.app/api/v1/movie/edit`, 
                     formData,
                     {
                         withCredentials: 'true',

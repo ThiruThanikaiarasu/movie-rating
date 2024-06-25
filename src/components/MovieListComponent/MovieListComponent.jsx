@@ -30,8 +30,8 @@ const MovieListComponent = () => {
 
     React.useEffect(() => {
         axios
-            .get(`http://localhost:3500/api/v1/movie/random`)
-            // .get(`https://movie-rating-server.vercel.app/api/v1/movie/random`)
+            // .get(`http://localhost:3500/api/v1/movie/random`)
+            .get(`https://movie-rating-server.vercel.app/api/v1/movie/random`)
             .then((response) => {
                 if (response.status === 200) {
                     setRandomMovies(response.data.data);
