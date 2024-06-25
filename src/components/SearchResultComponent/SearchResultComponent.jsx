@@ -33,7 +33,7 @@ const SearchResultComponent = ({movies, heading}) => {
                     paddingTop: '2em'
                 }}
             >
-                <Typography variant="h5">{heading} for `{lastSearch}`</Typography>
+                <Typography variant="h5">{heading} </Typography>
             </Box>
 
             <div

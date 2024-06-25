@@ -33,12 +33,15 @@ const MovieListComponent = () => {
             // .get(`http://localhost:3500/api/v1/movie/random`)
             .get(`https://movie-rating-server.vercel.app/api/v1/movie/random`)
             .then((response) => {
+                console.log(response.data)
                 if (response.status === 200) {
+                    // console.log(response.data)
                     setRandomMovies(response.data.data);
                 }
             })
             .catch((error) => {
-                alert(`Status: ${error.response.data.message}`);
+                // alert(`Status: ${error.message}`);
+                console.log(error.message)
             })
             .finally(() => {
                 setLoading(false);
@@ -48,7 +51,7 @@ const MovieListComponent = () => {
     return (
         <Box sx={{ flexGrow: 1 }}>
             <Box sx={{ paddingLeft: '43px', paddingTop: '2em' }}>
-                <Typography variant="h5">Random Movies</Typography>
+                <Typography variant="h5">Recommended Movies</Typography>
             </Box>
             <div
                 style={{

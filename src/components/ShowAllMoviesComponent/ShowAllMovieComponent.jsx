@@ -81,7 +81,7 @@ const ShowAllMoviesComponent = () => {
                 <Button variant='contained' sx={{ marginLeft: '1.5em'}} onClick={handleAddNewMovieClick}>Add</Button>
             </Box>
             <Box sx={{ paddingLeft: '43px', paddingTop: '2em' }}>
-                <Typography variant="h5">Random Movies</Typography>
+                <Typography variant="h5">Movies</Typography>
             </Box>
             <div
                 style={{

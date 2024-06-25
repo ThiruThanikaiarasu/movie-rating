@@ -38,7 +38,8 @@ const MovieListingTemplateComponent = ({ url, heading }) => {
                 }
             })
             .catch((error) => {
-                alert(`Status: ${error.message}`);
+                // alert(`Status: ${error.message}`);
+                console.log(error.message)
             })
             .finally(() => {
                 setLoading(false);
